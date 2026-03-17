@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Hametz | Reality Capture & Digital Twins</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a4e5190?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        /* Style for the Matterport Embed */
+        .matterport-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .matterport-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .highlight-pulse {
+            border: 2px solid #2563eb;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <!-- SVG Logo Placeholder -->
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">H</div>
+                <span class="font-bold text-xl tracking-tight uppercase">Andrew Hametz</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#services" class="hover:text-blue-600">Services</a>
+                <a href="#portfolio" class="hover:text-blue-600">Portfolio</a>
+                <a href="#contact" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient h-[60vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Precision Reality Capture</h1>
+            <p class="text-xl text-slate-300 mb-8">Engineering-grade 3D Digital Twins powered by Matterport Pro3 LiDAR for the NY Metro Area.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#portfolio" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-md font-semibold transition">View Projects</a>
+                <a href="#services" class="bg-white/10 hover:bg-white/20 backdrop-blur-md px-8 py-3 rounded-md font-semibold transition border border-white/30">Our Technology</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services / Tech Section -->
+    <section id="services" class="py-20 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-2">Technical Capabilities</h2>
+            <p class="text-slate-500 text-lg">Delivering defensible data for insurance, construction, and marketing.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-slate-100 card-hover">
+                <div class="text-blue-600 mb-4 font-bold tracking-widest text-sm uppercase">LiDAR PRECISION</div>
+                <p class="text-slate-600 text-sm leading-relaxed">±20mm accuracy across large spaces and outdoors using the Matterport Pro3 system. Millimeter-accurate as-builts.</p>
+            </div>
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-slate-100 card-hover">
+                <div class="text-blue-600 mb-4 font-bold tracking-widest text-sm uppercase">MEP TAGGING</div>
+                <p class="text-slate-600 text-sm leading-relaxed">Comprehensive documentation and digital tagging of mechanical, electrical, and plumbing assets for O&M workflows.</p>
+            </div>
+            <div class="p-8 bg-white rounded-xl shadow-sm border border-slate-100 card-hover">
+                <div class="text-blue-600 mb-4 font-bold tracking-widest text-sm uppercase">BIM & XACTIMATE</div>
+                <p class="text-slate-600 text-sm leading-relaxed">Direct E57 point cloud exports and TruePlan™ (.SKX) files for rapid restoration estimating and remote adjusting.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="py-20 bg-slate-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 border-l-4 border-blue-600 pl-4">Interactive Portfolio</h2>
+            
+            <!-- Technical/Industrial Section -->
+            <h3 class="text-sm font-bold mb-8 text-slate-400 uppercase tracking-[0.2em]">Facility & Commercial Documentation</h3>
+            <div class="grid lg:grid-cols-2 gap-12 mb-20">
+                <!-- Interactive Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="matterport-container">
+                        <iframe src="https://my.matterport.com/show/?m=puEzvmbTTkU&play=1&brand=0" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="font-bold text-xl text-slate-800 uppercase">Mechanical Infrastructure</h4>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase">LiDAR + E57</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">High-fidelity documentation of complex boiler rooms. This model allows for remote asset tagging and precise spatial measurements.</p>
+                        <hr class="mb-6">
+                        <div class="flex space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <span>Scan Time: 45m</span>
+                            <span>•</span>
+                            <span>Assets Tagged: 12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg highlight-pulse">
+                    <div class="matterport-container">
+                        <iframe src="https://my.matterport.com/show/?m=qWnEB1LWNgv&play=1&brand=0" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="font-bold text-xl text-slate-800 uppercase flex items-center">
+                                Commercial Office Shell
+                                <span class="ml-2 bg-yellow-400 text-yellow-900 text-[10px] px-2 py-0.5 rounded shadow-sm">NEW</span>
+                            </h4>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Scan-to-BIM</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">Millimeter-accurate captures of commercial interiors. Specifically designed for office design firms, architects, and engineers to facilitate rapid as-built modeling and structural planning.</p>
+                        <hr class="mb-6">
+                        <div class="flex space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <span>Area: 12,000 SF</span>
+                            <span>•</span>
+                            <span>Export: E57 / DWG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Project 3: Construction Staging -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="matterport-container">
+                        <iframe src="https://my.matterport.com/show/?m=KLYW28peHuc&play=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="font-bold text-xl text-slate-800 uppercase">Construction Staging</h4>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Progress Monitoring</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">Matterport provides a chronological digital record of construction milestones. We use LiDAR to verify that framing, electrical, and plumbing rough-ins match the architectural plans before walls are closed, significantly reducing RFI turnaround times.</p>
+                        <hr class="mb-6">
+                        <div class="flex space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <span>Phase: Rough-in</span>
+                            <span>•</span>
+                            <span>Frequency: Bi-Weekly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Project 4: As-Built for Retail -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="matterport-container">
+                        <iframe src="https://my.matterport.com/show/?m=HTXqLsxrCnz&play=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="font-bold text-xl text-slate-800 uppercase">As-Built for Retail</h4>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Retail Rollout</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">For multi-site retail owners, we create digital twins to verify existing conditions and floor plans across franchises. These models allow corporate designers to plan fixture updates and signage remotely, eliminating the need for expensive travel and manual measurements.</p>
+                        <hr class="mb-6">
+                        <div class="flex space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <span>Accuracy: ±20mm</span>
+                            <span>•</span>
+                            <span>Export: AutoCAD / Revit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hospitality/Luxe Section -->
+            <h3 class="text-sm font-bold mb-8 text-slate-400 uppercase tracking-[0.2em]">Luxury Real Estate & Hospitality</h3>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Interactive Project 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="matterport-container">
+                        <iframe src="https://my.matterport.com/show/?m=o5gsPwoTZZo&play=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="font-bold text-xl text-slate-800 uppercase">Luxury Estate Experience</h4>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Marketing Ready</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">Utilizing Pro3 LiDAR to capture seamless indoor/outdoor flow. Perfect for high-end Airbnb and short-term rental transparency.</p>
+                        <hr class="mb-6">
+                        <div class="flex space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <span>Type: Residential</span>
+                            <span>•</span>
+                            <span>Style: Modern</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Project 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="matterport-container">
+                        <iframe src="https://my.matterport.com/show/?m=YOUR_MODEL_ID_HERE&play=1" frameborder="0" allowfullscreen allow="xr-spatial-tracking"></iframe>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="font-bold text-xl text-slate-800 uppercase">Boutique Hotel Suite</h4>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Hospitality</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">Showcasing premium amenities and spatial layout for hospitality management and booking confidence.</p>
+                        <hr class="mb-6">
+                        <div class="flex space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <span>Type: Hospitality</span>
+                            <span>•</span>
+                            <span>Output: 4K Walkthrough</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-slate-900 text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 italic tracking-tighter">Ready to capture your site?</h2>
+            <p class="text-slate-400 mb-12 text-xl font-light">Available for contract Reality Capture services across NY, CT, and NJ.</p>
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                    <p class="text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">Phone</p>
+                    <p class="text-2xl font-bold">212-717-9652</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                    <p class="text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">Email</p>
+                    <p class="text-2xl font-bold">andrew.hametz@gmail.com</p>
+                </div>
+            </div>
+            <p class="text-slate-600 text-xs mt-8 font-medium">© 2026 ANDREW HAMETZ | REALITY CAPTURE SPECIALIST</p>
+        </div>
+    </footer>
+
+</body>
+</html>
