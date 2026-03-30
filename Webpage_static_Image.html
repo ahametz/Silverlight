@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silverlight | Andrew Hametz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        /* Branding Font */
+        .font-branding {
+            font-family: 'BankGothic LT BT', 'BankGothic', 'Orbitron', sans-serif;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        /* Unified Site Font */
+        .font-header {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .hero-section {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), #0f172a), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-bg {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .card-bg:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+            transform: scale(1.02);
+        }
+        .img-overlay {
+            position: relative;
+            cursor: pointer;
+            display: block;
+        }
+        .img-overlay::after {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .img-overlay:hover::after {
+            opacity: 1;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Branding -->
+    <header class="py-8 px-6 border-b border-slate-800 sticky top-0 bg-[#0f172a]/95 backdrop-blur-sm z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex flex-col items-center md:items-start">
+                <h1 class="text-4xl font-bold font-branding text-white leading-none">SILVERLIGHT</h1>
+                <span class="text-xs font-branding text-blue-400 mt-1 tracking-[0.4em] ml-1">REALITY CAPTURE</span>
+            </div>
+            <nav class="flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#capabilities" class="hover:text-blue-400 transition">Capabilities</a>
+                <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section py-24 px-6 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-5xl md:text-7xl font-header text-white mb-6 leading-tight">Precision <br class="hidden md:block"> Reality Capture</h2>
+            <p class="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto font-light">
+                Engineering-grade 3D Digital Twins powered by Matterport Pro3 LiDAR for the NY Metro Area.
+            </p>
+        </div>
+    </section>
+
+    <!-- Technical Capabilities -->
+    <section id="capabilities" class="bg-slate-900/50 py-24 px-6 border-y border-slate-800/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-header text-blue-500 mb-16 text-center uppercase tracking-wider">Technical Capabilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="p-8 rounded-xl bg-slate-800/40 border border-slate-700/50">
+                    <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-tight border-b border-blue-500/30 pb-2">LiDAR PRECISION</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">±20mm accuracy across large spaces and outdoors using the Matterport Pro3 system. Ideal for millimetre-accurate as-builts and architectural documentation.</p>
+                </div>
+                <div class="p-8 rounded-xl bg-slate-800/40 border border-slate-700/50">
+                    <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-tight border-b border-blue-500/30 pb-2">MEP TAGGING</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">Comprehensive documentation and digital tagging of mechanical, electrical, and plumbing assets. Create a permanent record for O&M workflows and facility management.</p>
+                </div>
+                <div class="p-8 rounded-xl bg-slate-800/40 border border-slate-700/50">
+                    <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-tight border-b border-blue-500/30 pb-2">BIM & XACTIMATE</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed font-medium">Direct E57 point cloud exports and TruePlan™ (.SKX) files for rapid restoration estimating, remote adjusting, and architectural design integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <main id="portfolio" class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-4xl font-header text-white mb-16 text-center uppercase tracking-tight">Interactive Portfolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project 1: Pre-Closure MEP Validation -->
+            <div class="card-bg rounded-xl overflow-hidden flex flex-col">
+                <a href="https://my.matterport.com/show/?m=puEzvmbTTkU" target="_blank" class="img-overlay">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" alt="Pre-Closure MEP Validation" class="w-full aspect-video object-cover">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Single Source of Truth</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pre-Closure MEP Validation</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">A high-fidelity "In-Progress" capture of a Department of Sanitation facility. This digital record serves as the definitive reference for Mechanical, Electrical, and Plumbing (MEP) layouts before they are concealed by walls and ceilings.</p>
+                    <a href="https://my.matterport.com/show/?m=puEzvmbTTkU" target="_blank" class="btn-primary text-white text-center py-3 rounded-lg font-semibold">View 3D Model</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card-bg rounded-xl overflow-hidden flex flex-col">
+                <a href="https://my.matterport.com/show/?m=qWnEB1LWNgv" target="_blank" class="img-overlay">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Commercial Office Shell" class="w-full aspect-video object-cover">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Scan-to-BIM</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Commercial Office Shell</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Millimeter-accurate captures of commercial interiors. Specifically designed for office design firms, architects, and engineers to facilitate rapid as-built modeling and structural planning.</p>
+                    <a href="https://my.matterport.com/show/?m=qWnEB1LWNgv" target="_blank" class="btn-primary text-white text-center py-3 rounded-lg font-semibold">View 3D Model</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="card-bg rounded-xl overflow-hidden flex flex-col">
+                <a href="https://my.matterport.com/show/?m=KLYW28peHuc" target="_blank" class="img-overlay">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800" alt="Construction Staging" class="w-full aspect-video object-cover">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Progress Monitoring</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Construction Staging</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Matterport provides a chronological digital record of construction milestones. We use LiDAR to verify that framing, electrical, and plumbing rough-ins match architectural plans.</p>
+                    <a href="https://my.matterport.com/show/?m=KLYW28peHuc" target="_blank" class="btn-primary text-white text-center py-3 rounded-lg font-semibold">View 3D Model</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="card-bg rounded-xl overflow-hidden flex flex-col">
+                <a href="https://my.matterport.com/show/?m=HTXqLsxrCnz" target="_blank" class="img-overlay">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800" alt="Retail Rollout" class="w-full aspect-video object-cover">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Retail Rollout</div>
+                    <h3 class="text-xl font-bold text-white mb-3">As-Built for Retail</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">For multi-site retail owners, we create digital twins to verify existing conditions and floor plans across franchises, allowing for remote fixture updates and signage planning.</p>
+                    <a href="https://my.matterport.com/show/?m=HTXqLsxrCnz" target="_blank" class="btn-primary text-white text-center py-3 rounded-lg font-semibold">View 3D Model</a>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="card-bg rounded-xl overflow-hidden flex flex-col">
+                <a href="https://my.matterport.com/show/?m=o5gsPwoTZZo" target="_blank" class="img-overlay">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" alt="Luxury Estate" class="w-full aspect-video object-cover">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Marketing Ready</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Premium Property Showcases</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Experience-driven digital twins for high-end listings. Utilizing Pro3 LiDAR to capture seamless indoor/outdoor flow, providing a comprehensive virtual record for guest confidence.</p>
+                    <a href="https://my.matterport.com/show/?m=o5gsPwoTZZo" target="_blank" class="btn-primary text-white text-center py-3 rounded-lg font-semibold">View 3D Model</a>
+                </div>
+            </div>
+
+            <!-- Project 6: Interactive Design Showcase -->
+            <div class="card-bg rounded-xl overflow-hidden flex flex-col">
+                <a href="https://my.matterport.com/show/?m=vL861G2R49p" target="_blank" class="img-overlay">
+                    <img src="https://images.unsplash.com/photo-1590608897129-79da98d15969?auto=format&fit=crop&q=80&w=800" alt="Interactive Design Showcase" class="w-full aspect-video object-cover">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-1">Shoppable Digital Twins</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Interactive Design Showcase</h3>
+                    <p class="text-slate-400 text-sm mb-6 flex-grow">Transforming final design installs into immersive 3D catalogs. This model demonstrates how designers can "tag" specific furnishings with direct product links and branding.</p>
+                    <a href="https://my.matterport.com/show/?m=vL861G2R49p" target="_blank" class="btn-primary text-white text-center py-3 rounded-lg font-semibold">View 3D Model</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="cta-section py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-header text-blue-400 mb-8 leading-tight">Ready to Capture <br> your site?</h2>
+            <div class="space-y-6 text-lg text-slate-300 mb-10 max-w-2xl mx-auto font-light">
+                <p>
+                    Silverlight provides contract Reality Capture services across the Tri-State area, specialized for MEP engineering, real estate, insurance restoration and high-end hospitality.
+                </p>
+            </div>
+            <a href="mailto:Andrew.hametz@gmail.com" class="inline-block btn-primary text-white px-10 py-4 rounded-lg font-bold text-xl uppercase tracking-widest">
+                Get a Quote
+            </a>
+            <div class="mt-12 text-slate-400">
+                <p class="font-bold text-white mb-1 uppercase tracking-widest text-sm">Andrew Hametz</p>
+                <div class="flex flex-col gap-1 text-lg">
+                    <a href="mailto:Andrew.hametz@gmail.com" class="hover:text-blue-400 transition">Andrew.hametz@gmail.com</a>
+                    <a href="tel:2127179652" class="hover:text-blue-400 transition">212-717-9652</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-12 px-6 border-t border-slate-800 text-center">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-white mb-2 font-branding leading-none">SILVERLIGHT</h2>
+            <p class="text-blue-400 text-[10px] font-branding mb-6 tracking-[0.3em]">REALITY CAPTURE</p>
+            <div class="flex justify-center gap-6 text-slate-500 text-xs font-medium">
+                <span>&copy; 2026 ANDREW HAMETZ | LIDAR SOLUTIONS</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
