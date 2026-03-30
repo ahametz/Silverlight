@@ -7,11 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: #0f172a; 
             color: #f8fafc; 
-            scroll-behavior: smooth;
+        }
+        /* Offset for sticky header when jumping to IDs */
+        section {
+            scroll-margin-top: 100px;
         }
         /* Branding Font */
         .font-branding { 
@@ -107,8 +113,8 @@
 <body class="antialiased">
 
     <!-- Header / Branding -->
-    <header class="py-8 px-6 border-b border-slate-800 sticky top-0 bg-[#0f172a]/95 backdrop-blur-sm z-50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <header class="py-8 px-6 border-b border-slate-800 sticky top-0 bg-[#0f172a]/95 backdrop-blur-sm z-50 h-[100px] flex items-center">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex flex-col items-center md:items-start">
                 <h1 class="text-4xl font-bold font-branding text-white leading-none text-center md:text-left">SILVERLIGHT</h1>
                 <span class="text-xs font-branding text-blue-400 mt-1 tracking-[0.4em] ml-1">REALITY CAPTURE</span>
@@ -135,6 +141,7 @@
     <!-- Industries Served Section -->
     <section id="industries" class="py-16 px-6 bg-slate-900/30">
         <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-header text-blue-500 mb-12 text-center uppercase tracking-wider">Industries Served</h2>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                 <!-- MEP -->
                 <div class="industry-card p-8 rounded-2xl flex flex-col items-center text-center">
@@ -167,7 +174,7 @@
                     <div class="industry-tag">INSURANCE &</div>
                     <div class="industry-tag">RESTORATION</div>
                 </div>
-                <!-- Hospitality (Updated Icon) -->
+                <!-- Hospitality -->
                 <div class="industry-card p-8 rounded-2xl flex flex-col items-center text-center">
                     <div class="w-12 h-12 mb-6 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -203,7 +210,7 @@
     </section>
 
     <!-- Portfolio Grid -->
-    <main id="portfolio" class="max-w-7xl mx-auto px-6 py-24">
+    <section id="portfolio" class="max-w-7xl mx-auto px-6 py-24">
         <h2 class="text-4xl font-header text-white mb-16 text-center uppercase tracking-tight">Interactive Portfolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
@@ -285,7 +292,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="cta-section py-24 px-6">
