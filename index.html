@@ -17,7 +17,7 @@
         }
         /* Offset for sticky header when jumping to IDs */
         section {
-            scroll-margin-top: 100px;
+            scroll-margin-top: 90px; /* Reduced to bring content higher up the screen */
         }
         /* Branding Font */
         .font-branding { 
@@ -91,8 +91,9 @@
         .cta-section { 
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); 
             border-top: 1px solid #334155; 
+            scroll-margin-top: 90px;
         }
-        /* Static Industry Cards (No hover highlight) */
+        /* Static Industry Cards */
         .industry-card {
             background: rgba(30, 41, 59, 0.4);
             border: 1px solid rgba(51, 65, 85, 0.5);
@@ -101,18 +102,52 @@
         /* Unified Tag Style */
         .industry-tag {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.125rem; /* text-lg */
+            font-size: 1.125rem;
             font-weight: 700;
             color: #ffffff;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             line-height: 1.2;
         }
+
+        /* Technical Capabilities & Solutions List Styling */
+        .capability-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+        .capability-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #94a3b8; /* slate-400 */
+        }
+        .capability-list li::before {
+            content: "•";
+            color: #3b82f6; /* blue-500 */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .capability-list strong {
+            color: #f8fafc; /* white */
+        }
+
+        /* Industry Solutions Specific Styling */
+        .solution-card {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: border-color 0.3s ease;
+        }
+        .solution-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header / Branding -->
     <header class="py-8 px-6 border-b border-slate-800 sticky top-0 bg-[#0f172a]/95 backdrop-blur-sm z-50 h-[100px] flex items-center">
         <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex flex-col items-center md:items-start">
@@ -122,13 +157,13 @@
             <nav class="flex gap-8 text-sm font-medium text-slate-400">
                 <a href="#industries" class="hover:text-blue-400 transition">Industries</a>
                 <a href="#capabilities" class="hover:text-blue-400 transition">Capabilities</a>
+                <a href="#solutions" class="hover:text-blue-400 transition">Solutions</a>
                 <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
                 <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
     <section class="hero-section py-24 px-6 text-center">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-5xl md:text-7xl font-header text-white mb-6 leading-tight">Precision <br class="hidden md:block"> Reality Capture</h2>
@@ -138,12 +173,10 @@
         </div>
     </section>
 
-    <!-- Industries Served Section -->
     <section id="industries" class="py-16 px-6 bg-slate-900/30">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-header text-blue-500 mb-12 text-center uppercase tracking-wider">Industries Served</h2>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-                <!-- MEP -->
                 <div class="industry-card p-8 rounded-2xl flex flex-col items-center text-center">
                     <div class="w-12 h-12 mb-6 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -153,7 +186,6 @@
                     <div class="industry-tag">ENGINEERING</div>
                     <div class="industry-tag">MEP & HVAC</div>
                 </div>
-                <!-- Real Estate -->
                 <div class="industry-card p-8 rounded-2xl flex flex-col items-center text-center">
                     <div class="w-12 h-12 mb-6 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -164,7 +196,6 @@
                     <div class="industry-tag">COMMERCIAL</div>
                     <div class="industry-tag">REAL ESTATE</div>
                 </div>
-                <!-- Insurance & Restoration -->
                 <div class="industry-card p-8 rounded-2xl flex flex-col items-center text-center">
                     <div class="w-12 h-12 mb-6 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -174,7 +205,6 @@
                     <div class="industry-tag">INSURANCE &</div>
                     <div class="industry-tag">RESTORATION</div>
                 </div>
-                <!-- Hospitality -->
                 <div class="industry-card p-8 rounded-2xl flex flex-col items-center text-center">
                     <div class="w-12 h-12 mb-6 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -188,33 +218,92 @@
         </div>
     </section>
 
-    <!-- Technical Capabilities -->
     <section id="capabilities" class="bg-slate-900/50 py-24 px-6 border-y border-slate-800/50">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-header text-blue-500 mb-16 text-center uppercase tracking-wider">Technical Capabilities</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
                 <div class="p-8 rounded-xl bg-slate-800/40 border border-slate-700/50">
                     <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-tight border-b border-blue-500/30 pb-2">LiDAR PRECISION</h3>
                     <p class="text-slate-400 text-sm leading-relaxed font-medium">±20mm accuracy across large spaces and outdoors using the Matterport Pro3 system. Ideal for as-builts and architectural documentation.</p>
+                    <ul class="capability-list">
+                        <li><strong>Eliminate Measurement Errors:</strong> Comprehensive point clouds capture every angle simultaneously, replacing manual tape measures.</li>
+                        <li><strong>Accelerate Timelines:</strong> Reduce on-site time by up to 80%, speeding up site surveys and documentation.</li>
+                        <li><strong>Spatial Analysis:</strong> Perform precise clearance checks and floor flatness analysis digitally to ensure new elements fit perfectly.</li>
+                    </ul>
                 </div>
+
                 <div class="p-8 rounded-xl bg-slate-800/40 border border-slate-700/50">
                     <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-tight border-b border-blue-500/30 pb-2">MEP TAGGING</h3>
                     <p class="text-slate-400 text-sm leading-relaxed font-medium">Comprehensive documentation of mechanical, electrical, and plumbing assets. Create a permanent record for O&M workflows.</p>
+                    <ul class="capability-list">
+                        <li><strong>Locating Hidden Assets:</strong> Identify the exact location of pipes and valves behind walls, eliminating destructive discovery holes.</li>
+                        <li><strong>Centralized Asset Intelligence:</strong> Link physical equipment in 3D to digital manuals, warranty details, and service history.</li>
+                        <li><strong>Remote Collaboration:</strong> Share the exact visual state of mechanical rooms with off-site technicians to streamline repairs.</li>
+                    </ul>
                 </div>
+
                 <div class="p-8 rounded-xl bg-slate-800/40 border border-slate-700/50">
                     <h3 class="text-xl font-bold text-white mb-4 uppercase tracking-tight border-b border-blue-500/30 pb-2">BIM & XACTIMATE</h3>
                     <p class="text-slate-400 text-sm leading-relaxed font-medium">Direct E57 point cloud exports and TruePlan™ (.SKX) files for rapid restoration estimating and architectural design integration.</p>
+                    <ul class="capability-list">
+                        <li><strong>Streamlined Design Foundation:</strong> Provide architects with a "living" base plan that reflects the actual built environment.</li>
+                        <li><strong>Clash Detection:</strong> Identify conflicts between new designs and existing structural elements early in pre-construction.</li>
+                        <li><strong>Consistent Data Continuity:</strong> Maintain a single source of truth from initial survey through construction and final handover.</li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Grid -->
+    <section id="solutions" class="py-24 px-6 bg-[#0f172a]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-header text-blue-500 mb-16 text-center uppercase tracking-wider">Industry Solutions</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="solution-card p-10 rounded-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-blue-500/10 rounded-lg text-blue-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 21V5.25A2.25 2.25 0 0017.25 3H6.75A2.25 2.25 0 004.5 5.25V21m15 0h-15M12 7.5h3m-3 4.5h3m-3 4.5h3M9 7.5h.008v.008H9V7.5zm0 4.5h.008v.008H9V12zm0 4.5h.008v.008H9v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-tight">Real Estate: Residential & Commercial</h3>
+                    </div>
+                    <p class="text-slate-300 mb-8 font-light leading-relaxed">Elevate property listings from static images to immersive digital experiences that drive engagement and qualified leads.</p>
+                    <ul class="capability-list">
+                        <li><strong>Virtual Open House 24/7:</strong> Allow prospective buyers to walk through a property from anywhere, reducing unnecessary site visits by up to 40%.</li>
+                        <li><strong>Indoor/Outdoor Continuity:</strong> Utilize Pro3 LiDAR to capture vast outdoor spaces and sunlight-filled interiors in a single, cohesive model.</li>
+                        <li><strong>Accelerate Deal Velocity:</strong> High-engagement 3D tours on platforms like Zillow and Realtor.com lead to faster offers and streamlined closings.</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card p-10 rounded-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-blue-500/10 rounded-lg text-blue-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6.119c0 3.803 1.407 7.28 3.747 9.926a13.59 13.59 0 007.732 4.49 13.59 13.59 0 007.732-4.49 11.959 11.959 0 0 1-8.149-3.843 11.959 11.959 0 0 1-8.149-3.843z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-tight">Insurance & Restoration</h3>
+                    </div>
+                    <p class="text-slate-300 mb-8 font-light leading-relaxed">Create a "Single Source of Truth" for claims processing and mitigation, ensuring all parties work from the same visual data.</p>
+                    <ul class="capability-list">
+                        <li><strong>Indisputable Loss Documentation:</strong> Capture a permanent, non-biased 3D archive of damage immediately after an event for adjusters and owners.</li>
+                        <li><strong>TruePlan™ for Xactimate:</strong> Generate sketch files guaranteed to be accurate within 1%, moving from estimation to "Scope of Work" instantly.</li>
+                        <li><strong>Eliminate Site Re-Visits:</strong> Return to the site virtually to verify measurements or structural details without leaving your desk.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio" class="max-w-7xl mx-auto px-6 py-24">
         <h2 class="text-4xl font-header text-white mb-16 text-center uppercase tracking-tight">Interactive Portfolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Project 1 -->
             <div class="card-bg rounded-xl overflow-hidden flex flex-col">
                 <a href="https://my.matterport.com/show/?m=puEzvmbTTkU" target="_blank" class="img-overlay">
                     <img src="mep-validation.png" alt="Pre-Closure MEP Validation" class="w-full aspect-video object-cover transition duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=MEP+Validation'">
@@ -227,7 +316,6 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="card-bg rounded-xl overflow-hidden flex flex-col">
                 <a href="https://my.matterport.com/show/?m=qWnEB1LWNgv" target="_blank" class="img-overlay">
                     <img src="office-shell.png" alt="Commercial Office Shell" class="w-full aspect-video object-cover transition duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=Office+Shell'">
@@ -240,7 +328,6 @@
                 </div>
             </div>
 
-            <!-- Project 3 -->
             <div class="card-bg rounded-xl overflow-hidden flex flex-col">
                 <a href="https://my.matterport.com/show/?m=KLYW28peHuc" target="_blank" class="img-overlay">
                     <img src="construction-staging.png" alt="Construction Staging" class="w-full aspect-video object-cover transition duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=Construction+Staging'">
@@ -253,7 +340,6 @@
                 </div>
             </div>
 
-            <!-- Project 4 -->
             <div class="card-bg rounded-xl overflow-hidden flex flex-col">
                 <a href="https://my.matterport.com/show/?m=HTXqLsxrCnz" target="_blank" class="img-overlay">
                     <img src="retail-rollout.png" alt="Retail Rollout" class="w-full aspect-video object-cover transition duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=Retail+Rollout'">
@@ -266,7 +352,6 @@
                 </div>
             </div>
 
-            <!-- Project 5 -->
             <div class="card-bg rounded-xl overflow-hidden flex flex-col">
                 <a href="https://my.matterport.com/show/?m=o5gsPwoTZZo" target="_blank" class="img-overlay">
                     <img src="luxury-estate.png" alt="Luxury Estate" class="w-full aspect-video object-cover transition duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=Luxury+Estate'">
@@ -279,7 +364,6 @@
                 </div>
             </div>
 
-            <!-- Project 6 -->
             <div class="card-bg rounded-xl overflow-hidden flex flex-col">
                 <a href="https://my.matterport.com/show/?m=vL861G2R49p" target="_blank" class="img-overlay">
                     <img src="design-showcase.png" alt="Interactive Design Showcase" class="w-full aspect-video object-cover transition duration-500 hover:scale-105" onerror="this.src='https://via.placeholder.com/600x400/1e293b/ffffff?text=Design+Showcase'">
@@ -294,7 +378,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="cta-section py-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl md:text-6xl font-header text-blue-400 mb-8 leading-tight italic">Ready to Capture <br> your site?</h2>
@@ -316,7 +399,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-slate-950 py-12 px-6 border-t border-slate-800 text-center">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-2xl font-bold text-white mb-2 font-branding leading-none">SILVERLIGHT</h2>
